@@ -1,0 +1,42 @@
+a {
+	color: Red;
+}
+
+.menu {
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	align-items: center;
+	height: 75px;
+}
+.menu > div {
+	text-align: center;
+	margin: 0px;
+	padding: 10px;
+	border-color: darkgrey;
+	border-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	font-size: 125%;
+}
+
+.TestClass {
+	color: Black;
+	background-color: White;
+	text-align: left;
+}
+tablebody, th, td {
+	border: 0px;
+	border-collapse: collapse;
+	padding: 15px;
+	background-color: white;
+	border-spacing: 0px;
+}
+tableworkers, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+	padding: 5px;
+	border-spacing: 1px;
+	text-align: center;
+	margin: 0px auto;
+}
