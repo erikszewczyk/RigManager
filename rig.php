@@ -34,6 +34,7 @@ $newdate= date('Y-m-d H:i:s');
 	$algo = $_REQUEST['algo'];
 	$hashrate = $_REQUEST['hashrate'];
 	$diff = $_REQUEST['diff'];
+	$coin_revenue = $_REQUEST['coin_revenue'];
 	$fiat_revenue = $_REQUEST['fiat_revenue'];
 	$btc_revenue = $_REQUEST['btc_revenue'];
 	$pool = $_REQUEST['pool'];
@@ -43,8 +44,8 @@ $newdate= date('Y-m-d H:i:s');
 
 //add to data
 	include 'mysqlcon.php';
-	$stmt = $conn->prepare('INSERT INTO rigstats (userid, worker, algo, hashrate, diff, fiat_revenue, btc_revenue, pool, miner, temp, watts) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
-	$stmt->bind_param('sssiiddssii',$userid, $worker, $algo, $hashrate, $diff, $fiat_revenue, $btc_revenue, $pool, $miner, $temp, $watts);
+	$stmt = $conn->prepare('INSERT INTO rigstats (userid, worker, algo, hashrate, diff, coin_revenue, fiat_revenue, btc_revenue, pool, miner, temp, watts) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+	$stmt->bind_param('sssiidddssii',$userid, $worker, $algo, $hashrate, $diff, $coin_revenue, $fiat_revenue, $btc_revenue, $pool, $miner, $temp, $watts);
 	$stmt->execute();
 	mysqli_close($conn);
 

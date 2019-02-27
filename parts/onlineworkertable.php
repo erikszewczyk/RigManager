@@ -16,12 +16,11 @@ if ($result->num_rows > 0) {
 	<caption>Online Workers</caption>
 	<tr>
 		<th>Worker Name</th>
-		<th>Pool</th>
-		<th>Miner</th>
 		<th>Algorithm<br>Hashes (or Solutions)/sec</th>
 		<th>Watts<br>Temp &#8451;</th>
-		<th>Projected Revenue (Fiat)</th>
-		<th>Projected Revenue (BTC)</th>
+		<th>Projected Revenue<br>(Coin)</th>
+		<th>Projected Revenue<br>(Fiat)</th>
+		<th>Projected Revenue<br>(BTC)</th>
 	</tr>
 
 <?php
@@ -31,10 +30,9 @@ if ($result->num_rows > 0) {
 	while ($row = $result->fetch_assoc()) {
 		echo "<tr>";
 			echo "<td>" . $row['worker'] . "</td>";
-			echo "<td>" . $row['pool'] .  "</td>";
-			echo "<td>" . $row['miner'] . "</td>";
 			echo "<td>" . $row['algo'] . "<br><a href='./?page=minerstats&worker=" . $row['worker'] . "&stat=hashrate'>" . ConvertToHashrate($row['hashrate']) . "</a></td>";
 			echo "<td><a href='.?page=minerstats&worker=" . $row['worker'] . "&stat=watts'>" . $row['watts'] . "</a>w<br><a href='./?page=minerstats&worker=" . $row['worker'] . "&stat=temp'>" . $row['temp'] . "</a>°</td>";
+			echo "<td>" . (float)$row['coin_revenue'] . "</td>";
 			echo "<td><a href='./?page=minerstats&worker=" . $row['worker'] . "&stat=fiat_revenue'>" . $row['fiat_revenue'] . "</a></td>";
 			echo "<td><a href='./?page=minerstats&worker=" . $row['worker'] . "&stat=btc_revenue'>" . $row['btc_revenue'] . "</a></td>";
 		echo "</tr>";
@@ -42,7 +40,7 @@ if ($result->num_rows > 0) {
 		$BTCSum += $row['btc_revenue'];
 		$wattsum += $row['watts'];
 	}
-	echo "<tr><th colspan='4' style='text-align: right'>Projected:</th><th>" . ConvertToWattrate($wattsum*24) . "H/Day<br>" . ConvertToWattrate($wattsum*24*30) . "H/Month<br>" . ConvertToWattrate($wattsum*24*365) . "H/Year</th><th>" . number_format($FiatSum, 2) . "/Day<br>" . number_format($FiatSum * 30, 2) . "/Month<br>" . number_format($FiatSum * 365, 2) . "/Year</th><th>" . $BTCSum . "/Day<br>" . $BTCSum * 30 . "/Month<br>" . $BTCSum * 365 . "/Year</th></tr>";
+	echo "<tr><th colspan='2' style='text-align: right'>Projected:</th><th>" . ConvertToWattrate($wattsum*24) . "H/Day<br>" . ConvertToWattrate($wattsum*24*30) . "H/Month<br>" . ConvertToWattrate($wattsum*24*365) . "H/Year</th><th>&nbsp;</th><th>" . number_format($FiatSum, 2) . "/Day<br>" . number_format($FiatSum * 30, 2) . "/Month<br>" . number_format($FiatSum * 365, 2) . "/Year</th><th>" . $BTCSum . "/Day<br>" . $BTCSum * 30 . "/Month<br>" . $BTCSum * 365 . "/Year</th></tr>";
 
 ?>
 </table>
