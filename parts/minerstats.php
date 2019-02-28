@@ -30,7 +30,10 @@ if (empty($_SERVER['REMOTE_USER'])) {
 		$mystat = 'Watts';
 	} elseif (isset($_GET['stat']) AND $_GET['stat'] == 'temp') {
 		$stmt = $conn->prepare('SELECT dtm, temp as mystat FROM rigmanager.rigstats where userid = ? AND worker = ? AND dtm >= NOW() - INTERVAL ? DAY;');
-		$mystat = 'Temperature';
+        $mystat = 'Temperature';
+    } elseif (isset($_GET['stat']) AND $_GET['stat'] == 'coin_revenue') {
+		$stmt = $conn->prepare('SELECT dtm, coin_revenue as mystat FROM rigmanager.rigstats where userid = ? AND worker = ? AND dtm >= NOW() - INTERVAL ? DAY;');
+		$mystat = 'Coin Revenue';
 	} elseif (isset($_GET['stat']) AND $_GET['stat'] == 'fiat_revenue') {
 		$stmt = $conn->prepare('SELECT dtm, fiat_revenue as mystat FROM rigmanager.rigstats where userid = ? AND worker = ? AND dtm >= NOW() - INTERVAL ? DAY;');
 		$mystat = 'Fiat Revenue';
