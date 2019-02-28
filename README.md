@@ -13,7 +13,7 @@ You can use our site for free at: https://www.rigmanager.xyz/
 
 Or use this code to selfhost (or if you're curious what our site does)
 
-NOTE that our code and hosting utilizes Microsoft Azure's native authentication integration capabilities with Google - if you do decide to self host you'll need to do something on your own to create authentication.
+NOTE that our code and hosting utilizes Microsoft Azure's native authentication integration capabilities with Google - if you do decide to self host you'll need to do something on your own to manage authentication.
 
 Have fun!
 
