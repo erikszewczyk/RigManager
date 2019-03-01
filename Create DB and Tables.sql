@@ -20,6 +20,7 @@ CREATE TABLE `rigstats` (
   `diff` bigint(14) DEFAULT NULL,
   `watts` int(6) DEFAULT NULL,
   `temp` int(3) DEFAULT NULL,
+  `coin_revenue` decimal(12,2) DEFAULT NULL,
   `fiat_revenue` decimal(12,2) DEFAULT NULL,
   `btc_revenue` decimal(8,8) DEFAULT NULL,
   PRIMARY KEY (`id`)
