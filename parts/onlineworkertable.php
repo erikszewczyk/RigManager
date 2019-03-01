@@ -31,7 +31,7 @@ if ($result->num_rows > 0) {
 		echo "<tr>";
 			echo "<td>" . $row['worker'] . "</td>";
 			echo "<td>" . $row['algo'] . "<br><a href='./?page=minerstats&worker=" . $row['worker'] . "&stat=hashrate'>" . ConvertToHashrate($row['hashrate']) . "</a></td>";
-			echo "<td><a href='.?page=minerstats&worker=" . $row['worker'] . "&stat=watts'>" . $row['watts'] . "</a>w<br><a href='./?page=minerstats&worker=" . $row['worker'] . "&stat=temp'>" . $row['temp'] . "</a>°</td>";
+			echo "<td>"; if (!empty($row['watts'])) { echo "<a href='.?page=minerstats&worker=" . $row['worker'] . "&stat=watts'>" . $row['watts'] . "</a>w<br><a href='./?page=minerstats&worker=" . $row['worker'] . "&stat=temp'>" . $row['temp'] . "</a>°"; } else { echo '&nbsp;'; } echo "</td>";
 			echo "<td>"; if (!empty($row['coin_revenue'])) { echo "<a href='./?page=minerstats&worker=" . $row['worker'] . "&stat=coin_revenue'>" . (float)$row['coin_revenue'] . "</a>"; } else { echo '&nbsp;'; } echo "</td>";
 			echo "<td><a href='./?page=minerstats&worker=" . $row['worker'] . "&stat=fiat_revenue'>" . $row['fiat_revenue'] . "</a></td>";
 			echo "<td><a href='./?page=minerstats&worker=" . $row['worker'] . "&stat=btc_revenue'>" . $row['btc_revenue'] . "</a></td>";
