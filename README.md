@@ -6,12 +6,13 @@
     <li>Able to be integrated with any miner hardware (ASIC, FPGA, GPU, and others) and any mining software (MPM, CCMiner, Bminer, etc.) based on an API that’s simple to interface with</li>
     <li>Store/display history/mining statistics</li>
     <li>Have as little personal information as possible about you or your mining operation</li>
-    <li>Have a free to use option (as in “Free Beer”) – core functionality without any dev or subscription fees</li>
+    <li>Has a free to use hosted option (as in “Free Beer”) – core functionality without any dev or subscription fees</li>
+    <li>Is open source for transparency</li>
 </ul>
 
 You can use our site for free at: https://www.rigmanager.xyz/
 
-Or use this code to selfhost (or if you're curious what our site does)
+Or use this code to selfhost (or just browse if you're curious what our site does)
 
 NOTE that our code and hosting utilizes Microsoft Azure's native authentication integration capabilities with Google - if you do decide to self host you'll need to do something on your own to manage authentication.
 
