@@ -1,4 +1,4 @@
-<p>Free Cryptocurrencing miner monitoring that can be integrated with any miner!</p>
+<p>Free Cryptocurrencing revenue monitoring that can be integrated with any Miner, Staker or MasterNode!</p>
 <?php
 if (!isset($fromhome)) {
 	die ("You can't access this file directly");
@@ -10,10 +10,11 @@ if (empty($_SERVER['REMOTE_USER'])) {
 <p>Rig Manager is a service for monitoring your cryptocurrency mining rigs that is designed to be:</p>
 <ul align='left'>
     <li>Fast and effective at answering the key question – “Are my miners running and how are they doing?”</li>
-    <li>Able to be integrated with any miner hardware (ASIC, FPGA, GPU, and others) and any mining software (MPM, CCMiner, Bminer, etc.) based on an API that’s simple to interface with</li>
-    <li>Store/display history/mining statistics</li>
+    <li>Able to be integrated with any mining approach (software mining, MasterNodes, etc) and any mining hardware (ASIC, GPU, etc) based on an API that’s simple to interface with</li>
+    <li>Store/display history statistics</li>
     <li>Have as little personal information as possible about you or your mining operation</li>
-    <li>Have a free to use option (as in “Free Beer”) – core functionality without any dev or subscription fees</li>
+    <li>Have a free hosted option (as in “Free Beer”) – core functionality without any dev or subscription fees</li>
+    <li>Is open sourced for full transparency</li>
 </ul>
 <?php
 } else {
